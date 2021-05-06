@@ -1,91 +1,45 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2580
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh9060\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+QUERY SU SINGOLA TABELLA 
 
-\f0\b\fs24 \cf0 QUERY SU SINGOLA TABELA \
+1: SELECT `id`, `name`, `lastname`, `document_type` FROM `ospiti` WHERE `document_type` = 'CI'
 
-\f1\b0 \
+SCREEN: 1_query_singola_tabella
 
-\f0\b 1
-\f1\b0 : SELECT\'a0`id`,\'a0`name`,\'a0`lastname`,\'a0`document_type`\'a0FROM\'a0`ospiti`\'a0WHERE\'a0`document_type`\'a0=\'a0'CI'\
-\
 
-\f0\b SCREEN
-\f1\b0 : 1_query_singola_tabella\
-\
-\
+2: SELECT `id`,`name`,`lastname`,`date_of_birth` FROM `ospiti` WHERE `date_of_birth` > "1988-12-31”
 
-\f0\b 2
-\f1\b0 : SELECT `id`,`name`,`lastname`,`date_of_birth` FROM `ospiti` WHERE `date_of_birth` > "1988-12-31\'94\
-\
+SCREEN: 2_query_singola_tabella
 
-\f0\b SCREEN
-\f1\b0 : 2_query_singola_tabella\
-\
-\
 
-\f0\b 3
-\f1\b0 : SELECT `id`, `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE (TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) > 20 )\
-\
+3: SELECT `id`, `name`, `lastname`, `date_of_birth` FROM `ospiti` WHERE (TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) > 20 )
 
-\f0\b SCREEN
-\f1\b0 : 3_query_singola_tabella\
-\
-\
+SCREEN: 3_query_singola_tabella
 
-\f0\b 4
-\f1\b0 : SELECT `id`, `name`, `lastname` FROM `ospiti` WHERE (LEFT(`name`, 1) = "D")\
-\
 
-\f0\b SCREEN
-\f1\b0 : 4_query_singola_tabella\
-\
-\
+4: SELECT `id`, `name`, `lastname` FROM `ospiti` WHERE (LEFT(`name`, 1) = "D")
 
-\f0\b 5
-\f1\b0 : SELECT SUM(`price`) FROM `pagamenti` WHERE `status` = "accepted"\
-\
+SCREEN: 4_query_singola_tabella
 
-\f0\b SCREEN
-\f1\b0 : 5_query_singola_tabella\
-\
-\
 
-\f0\b 6
-\f1\b0 : SELECT MAX(`price`) FROM `pagamenti` WHERE `status` = "accepted"\
-\
+5: SELECT SUM(`price`) FROM `pagamenti` WHERE `status` = "accepted"
 
-\f0\b SCREEN
-\f1\b0 : 6_query_singola_tabella\
-\
-\
+SCREEN: 5_query_singola_tabella
 
-\f0\b 7
-\f1\b0 : SELECT `id`, `name`, `lastname`, `document_type`, `date_of_birth` FROM `ospiti` WHERE `document_type` = "Driver License" AND YEAR(`date_of_birth`) = "1975"\
-\
 
-\f0\b SCREEN
-\f1\b0 : 7_query_singola_tabella\
-\
-\
+6: SELECT MAX(`price`) FROM `pagamenti` WHERE `status` = "accepted"
 
-\f0\b 8
-\f1\b0 : SELECT COUNT(`id`) FROM `paganti` WHERE `ospite_id` <> "NULL"\
-\
+SCREEN: 6_query_singola_tabella
 
-\f0\b SCREEN
-\f1\b0 : 8_query_singola_tabella\
-\
-\
 
-\f0\b 9
-\f1\b0 : SELECT SUM(`beds`) FROM `stanze`\
-\
+7: SELECT `id`, `name`, `lastname`, `document_type`, `date_of_birth` FROM `ospiti` WHERE `document_type` = "Driver License" AND YEAR(`date_of_birth`) = "1975"
 
-\f0\b SCREEN
-\f1\b0 : 9_query_singola_tabella\
-\
-}
+SCREEN: 7_query_singola_tabella
+
+
+8: SELECT COUNT(`id`) FROM `paganti` WHERE `ospite_id` <> "NULL"
+
+SCREEN: 8_query_singola_tabella
+
+
+9: SELECT SUM(`beds`) FROM `stanze`
+
+SCREEN: 9_query_singola_tabella
