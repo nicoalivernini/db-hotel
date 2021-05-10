@@ -21,22 +21,26 @@ if ($conn && $conn->connect_error) {
     $stmt->bind_param("i", $_GET['id']);
     //Settaggio ed esecuzione
     $stmt->execute();
+    //Prendo il risultato
     $result = $stmt->get_result();
+    //Ciclo i risultati
     while($row = $result->fetch_assoc()) {
       ?>
       <?php  ?>
+      <!-- Stampo informazioni camera selezionata -->
+      <div><?= 'ID:' .$row['id'] ?></div>
       <div><?= 'Stanza N:' .$row['room_number'] ?></div>
       <div><?= 'Numero di letti:' .$row['beds'] ?></div>
       <div><?= 'Piano:' .$row['floor'] ?></div>
-      </div>
+      <div><a href="/db-hotel/"><?= 'Torna alle stanze' ?></a></div>
       <?php
     }
-
   } else {
 
  ?>
 
 <?php
+    //Creo la query
     $sql = "SELECT room_number, floor FROM stanze";
     $result = $conn->query($sql);
 
