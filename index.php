@@ -37,11 +37,8 @@ if ($conn && $conn->connect_error) {
     }
   } else {
 
- ?>
-
-<?php
     //Creo la query
-    $sql = "SELECT room_number, floor FROM stanze";
+    $sql = "SELECT room_number, id, floor FROM stanze";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows > 0) {
@@ -51,7 +48,7 @@ if ($conn && $conn->connect_error) {
       while ($row) {
       ?>
       <!-- Stampo i risultati -->
-        <div><a href="/db-hotel/?id=<?= $row['id'] ?>"><?= "Stanza N." .$row['room_number']; ?></a> </div>
+        <div><a href="/db-hotel/?id=<?= $row['id'] ?>"><?= "Stanza N." .$row['room_number']; ?></a></div>
       <?php
         $row = $result->fetch_assoc();
       }
